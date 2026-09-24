@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { files, parseSums, render } from "./render.mjs";
+import { files, parseSums, render } from "./teitunnel.mjs";
 
 const hex = (c) => c.repeat(64);
 const sums = (v) =>

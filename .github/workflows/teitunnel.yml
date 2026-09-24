@@ -1,4 +1,4 @@
-name: Update
+name: Teitunnel
 
 # Follows Teitunnel's releases: every three hours (or by hand) it checks the latest
 # release, and for a new one renders the cask and formula from the release's
@@ -48,7 +48,7 @@ jobs:
           gh release download "$tag" -R "$SOURCE" -p SHA256SUMS.txt -D "$RUNNER_TEMP"
           gh attestation verify "$RUNNER_TEMP/SHA256SUMS.txt" -R "$SOURCE" \
             --signer-workflow "$SOURCE/.github/workflows/release.yml"
-          node scripts/render.mjs "$version" "$RUNNER_TEMP/SHA256SUMS.txt"
+          node scripts/teitunnel.mjs "$version" "$RUNNER_TEMP/SHA256SUMS.txt"
           git diff --stat
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - if: steps.render.outputs.changed == 'true'

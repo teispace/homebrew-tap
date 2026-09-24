@@ -1,7 +1,7 @@
 name: Tests
 
 # Lints the cask and formula with Homebrew's own checks, then installs, tests and
-# uninstalls them on macOS and Linux. update.yml runs it on a freshly rendered release
+# uninstalls them on macOS and Linux. teitunnel.yml runs it on a freshly rendered release
 # (the `artifact` input) before pushing.
 
 on:

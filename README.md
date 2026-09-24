@@ -1,7 +1,11 @@
 # Teispace Homebrew tap
 
-[Teitunnel](https://teitunnel.teispace.com/), the Cloudflare Tunnel app for macOS, Windows
-and Linux, for Homebrew.
+Homebrew packages for [Teispace](https://teispace.com/) apps.
+
+## Teitunnel
+
+[Teitunnel](https://teitunnel.teispace.com/) is the Cloudflare Tunnel app for macOS, Windows
+and Linux.
 
 ```sh
 brew install --cask teispace/tap/teitunnel     # the Mac app (includes teitunnel-cli)
@@ -22,10 +26,11 @@ Your Cloudflare account isn't changed: see [Uninstall](https://teitunnel.teispac
 
 ## How it's kept current
 
-[`update.yml`](.github/workflows/update.yml) checks for a new release every three hours. It
-takes each file's checksum from the release's `SHA256SUMS.txt` after verifying that file's
+Each app has a workflow that follows its releases and a script that renders its files.
+For Teitunnel, [`teitunnel.yml`](.github/workflows/teitunnel.yml) checks for a new release
+every three hours. It takes each file's checksum from the release's `SHA256SUMS.txt` after verifying that file's
 [build provenance](https://github.com/teispace/teitunnel/attestations), renders the cask and
-formula (`scripts/render.mjs`), installs and tests them on macOS and Linux, and only then
-pushes. Don't edit `Casks/` or `Formula/` by hand; change `scripts/render.mjs`.
+formula (`scripts/teitunnel.mjs`), installs and tests them on macOS and Linux, and only then
+pushes. Don't edit `Casks/` or `Formula/` by hand; change the app's script.
 
 Problems with Teitunnel itself: [teispace/teitunnel issues](https://github.com/teispace/teitunnel/issues).

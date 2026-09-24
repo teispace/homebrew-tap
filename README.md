@@ -8,11 +8,11 @@ Homebrew packages for [Teispace](https://teispace.com/) apps.
 and Linux.
 
 ```sh
-brew install --cask teispace/tap/teitunnel     # the Mac app (includes teitunnel-cli)
-brew install teispace/tap/teitunnel-cli        # only the command line: macOS and Linux
+brew install --cask teispace/tap/teitunnel     # the Mac app, with the teitunnel command
+brew install teispace/tap/teitunnel-cli        # only the teitunnel command: macOS and Linux
 ```
 
-Install one or the other: the app already puts `teitunnel-cli` on your PATH. The app keeps
+Install one or the other: both give you the `teitunnel` command. The app keeps
 itself up to date; `brew upgrade` works too. `teitunnel-cli` installs `cloudflared` from
 Homebrew as a dependency.
 

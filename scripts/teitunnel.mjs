@@ -58,7 +58,7 @@ cask "teitunnel" do
   depends_on macos: :sonoma
 
   app "Teitunnel.app"
-  binary "#{appdir}/Teitunnel.app/Contents/MacOS/teitunnel-cli"
+  binary "#{appdir}/Teitunnel.app/Contents/MacOS/teitunnel-cli", target: "teitunnel"
 
   zap trash: [
     "~/Library/Application Support/com.teispace.teitunnel",
@@ -98,12 +98,12 @@ class TeitunnelCli < Formula
   depends_on "cloudflared"
 
   def install
-    bin.install "teitunnel-cli"
-    generate_completions_from_executable(bin/"teitunnel-cli", "completions")
+    bin.install "teitunnel"
+    generate_completions_from_executable(bin/"teitunnel", "completions")
   end
 
   test do
-    assert_match "teitunnel-cli #{version}", shell_output("#{bin}/teitunnel-cli --version")
+    assert_match "teitunnel #{version}", shell_output("#{bin}/teitunnel --version")
   end
 end
 `;

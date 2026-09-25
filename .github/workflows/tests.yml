@@ -62,6 +62,6 @@ jobs:
           test -d /Applications/Teitunnel.app
           codesign --verify --deep --strict /Applications/Teitunnel.app
           spctl --assess --type execute -v /Applications/Teitunnel.app
-          "$(brew --prefix)/bin/teitunnel-cli" --version
+          "$(brew --prefix)/bin/teitunnel" --version
           brew uninstall --cask --zap teispace/tap/teitunnel
           test ! -e /Applications/Teitunnel.app

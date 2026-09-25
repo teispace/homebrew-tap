@@ -5,14 +5,14 @@ class TeitunnelCli < Formula
   license "MIT"
 
   if OS.mac?
-    url "https://github.com/teispace/teitunnel/releases/download/v0.1.0/teitunnel-cli_0.1.0_macos-universal.zip"
-    sha256 "cc9089339bab596398f7ebb4e1baa4a327e1e31d7fbb1605b423e0640a8770ef"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_macos-universal.zip"
+    sha256 "88c0a0c869535ef6d3d3f72db358272fb5570d9a5b0f742fbd384873633a3990"
   elsif Hardware::CPU.arm?
-    url "https://github.com/teispace/teitunnel/releases/download/v0.1.0/teitunnel-cli_0.1.0_linux-arm64.tar.gz"
-    sha256 "a46da3e3f6fc00c67c6cdc882b5b323cb7120e97971dabfbc5336b7b2a29508e"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_linux-arm64.tar.gz"
+    sha256 "588797bfcc2c38ee83fb2538a7405c079cf550a3196f1b3ecd0908acca892b92"
   else
-    url "https://github.com/teispace/teitunnel/releases/download/v0.1.0/teitunnel-cli_0.1.0_linux-x64.tar.gz"
-    sha256 "98ac94f4c9badb80023e94ffe8a74bbcf084de2140efc7a5cb27c91b2d277844"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_linux-x64.tar.gz"
+    sha256 "f55f8fadbf72558b3e6548f1dae174affbcd85455222b530fae17115901de036"
   end
 
   livecheck do
@@ -23,11 +23,11 @@ class TeitunnelCli < Formula
   depends_on "cloudflared"
 
   def install
-    bin.install "teitunnel-cli"
-    generate_completions_from_executable(bin/"teitunnel-cli", "completions")
+    bin.install "teitunnel"
+    generate_completions_from_executable(bin/"teitunnel", "completions")
   end
 
   test do
-    assert_match "teitunnel-cli #{version}", shell_output("#{bin}/teitunnel-cli --version")
+    assert_match "teitunnel #{version}", shell_output("#{bin}/teitunnel --version")
   end
 end

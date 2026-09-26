@@ -5,14 +5,14 @@ class TeitunnelCli < Formula
   license "MIT"
 
   if OS.mac?
-    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_macos-universal.zip"
-    sha256 "88c0a0c869535ef6d3d3f72db358272fb5570d9a5b0f742fbd384873633a3990"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.3.0/teitunnel-cli_0.3.0_macos-universal.zip"
+    sha256 "53f2f605cd03d521dcca265064e67729105c793d6d0ffcadc520729ea5514b6d"
   elsif Hardware::CPU.arm?
-    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_linux-arm64.tar.gz"
-    sha256 "588797bfcc2c38ee83fb2538a7405c079cf550a3196f1b3ecd0908acca892b92"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.3.0/teitunnel-cli_0.3.0_linux-arm64.tar.gz"
+    sha256 "94d8fc7802d0b0b3cb4f15c559aefd2e080d187f2c159180f64d6837a76cb737"
   else
-    url "https://github.com/teispace/teitunnel/releases/download/v0.2.0/teitunnel-cli_0.2.0_linux-x64.tar.gz"
-    sha256 "f55f8fadbf72558b3e6548f1dae174affbcd85455222b530fae17115901de036"
+    url "https://github.com/teispace/teitunnel/releases/download/v0.3.0/teitunnel-cli_0.3.0_linux-x64.tar.gz"
+    sha256 "ddd374d61f6a1e442f6aec3f016b784fa0356fd0985a612c547105153f5dd16b"
   end
 
   livecheck do
